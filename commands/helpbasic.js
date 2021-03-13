@@ -7,7 +7,8 @@ module.exports = {
         .setTitle('Basic commands')
         .setDescription('These are basic commands you can use with ChrisBot')
         .addFields(
-            {name: '**suggest**', value: '`You can suggest stuff by doing -suggest your suggestion`'}
+            {name: '**suggest**', value: '`You can suggest stuff by doing -suggest your suggestion`'},
+            {name: '**ping**', value: '`Shows your the bots ping`'}
         ) 
         .setFooter('Make sure to put - before each command')
 
