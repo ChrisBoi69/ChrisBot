@@ -1,14 +1,12 @@
 module.exports = {
     name: 'ping',
     description: "sends the bots ping",
-    execute: async(client, message, args) => {
-        const msg = await message.channel.send('Pinging...');
+    execute: async(client, message, args) => 
+    message.channel.send("Pinging...").then(m => {
+        let ping = m.createdTimestamp - message.createdTimestamp
+        let choices = ["Is this really my ping", "Is it okay? I cant look", "I hope it isnt bad"]
+        let response = choices[Math.floor(Math.random() * choices.length)]
 
-		const latency = msg.createdTimestamp - message.createdTimestamp;
-		const choices = ['Is this really my ping?', 'Is this okay? I can\'t look!', 'I hope it isn\'t bad!'];
-		const response = choices[Math.floor(Math.random() * choices.length)];
-
-		msg.edit(`${response} - Bot Latency: \`${latency}ms\`, API Latency: \`${Math.round(this.client.ws.ping)}ms\``);
-	
+        m.edit(`${response}: Bot Latency: \`${ping}\`, API Latency: \`${Math.round(bot.ping)}\``)
+    })
     }
-};
