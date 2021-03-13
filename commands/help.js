@@ -4,7 +4,6 @@ module.exports = {
     name: 'help',
     description: "Sends a list of commands you can use in chat",
     execute(message, args, Discord) {
-        message.react('✅');
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#7D93C8')
         .setTitle('ChrisBot commands')
