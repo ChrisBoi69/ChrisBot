@@ -7,6 +7,6 @@ module.exports = {
         let choices = ["Is this really my ping", "Is it okay? I cant look", "I hope it isnt bad"]
         let response = choices[Math.floor(Math.random() * choices.length)]
 
-        m.edit(`${response}: Bot Latency: \`${ping}\`, API Latency: \`${Math.round(bot.ping)}\``)
+        m.edit(`${response}: Bot Latency: \`${ping}\`, API Latency: \`${Math.round(client.ping)}\``)
     })
     }
