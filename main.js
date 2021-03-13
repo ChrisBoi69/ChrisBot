@@ -105,6 +105,10 @@ if (command === 'wiki') {
 if (command === 'ping') {
     client.commands.get('ping').execute(client, message, arg);
 }
+if (command === 'uptime') {
+    client.commands.get('uptime').execute(client, message, arg);
+}
+
 
 
 
