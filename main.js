@@ -103,8 +103,7 @@ if (command === 'wiki') {
     client.commands.get('wiki').execute(message, args, client);
 }
 if (command === 'ping') {
-    client.commands.get('ping').execute(client, message, args);
-    message.react('✅');
+    client.commands.get('ping').execute(client, message, arg);
 }
 
 
