@@ -1,7 +1,7 @@
 module.exports = {
     name: 'poll',
     description: "Creates a poll in the poll channel",
-    execute(client, message, args) {
+    execute: async(client, message, args) => {
         
         const polls = args.slice(1).join(' ')
 
