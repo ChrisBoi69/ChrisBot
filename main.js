@@ -108,10 +108,6 @@ if (command === 'ping') {
 if (command === 'uptime') {
     client.commands.get('uptime').execute(client, message, args);
 }
-if (command === 'poll') {
-    client.commands.get('poll').execute(client, message, args);
-}
-
 
 
 

@@ -1,12 +1,21 @@
+const { MessageEmbed } = require('discord.js')
 module.exports = {
-    name: 'ping',
-    description: "sends the bots ping",
-    execute: async(client, message, args) => 
-    message.channel.send("Pinging...").then(m => {
-        let ping = m.createdTimestamp - message.createdTimestamp
-        let choices = ["Is this really my ping", "Is it okay? I cant look", "I hope it isnt bad"]
-        let response = choices[Math.floor(Math.random() * choices.length)]
+    name : 'ping',
+    description : 'Returns latency and API ping',
 
-        m.edit(`${response}: Bot Latency: \`${ping}\`, API Latency: \`${Math.round(client.ping)}\``)
-    })
+    /**
+     * @param {Client} client
+     * @param {Message} message
+     * @param {String[]} args
+     */
+
+    run : async(client, message, args) => {
+        const msg = await message.channel.send(`🏓 Pinging...`)
+        const embed = new MessageEmbed()
+            .setTitle('Pong!')
+            .setDescription(`WebSocket ping is ${client.ws.ping}MS\nMessage edit ping is ${Math.floor(msg.createdAt - message.createdAt)}MS!`)
+            await message.channel.send(embed)
+            msg.delete()
+
     }
+}
