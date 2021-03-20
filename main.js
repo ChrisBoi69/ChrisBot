@@ -108,6 +108,9 @@ if (command === 'ping') {
 if (command === 'uptime') {
     client.commands.get('uptime').execute(client, message, args);
 }
+if (command === '8ball') {
+    client.commands.get('8ball').execute(client, message, args);
+}
 
 
 
