@@ -33,7 +33,7 @@ module.exports = {
              "You may rely on it."
         ]
         let Response = respones[Math.floor(Math.random() * (respones.length))]
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
         .setTitle(`8ball`)
         .setColor('RANDOM')
         .setDescription(`Your question: ${args[0]} \n My response: ${Response}`)
