@@ -23,6 +23,12 @@ for (const File of commandFiles) {
 
     client.commands.set(command.name, command);
 }
+let stats = {
+    serverID: '815498513127047218',
+    total: "816232518939574282",
+    members: "825306106443857930",
+    bots: "825306149510578186"
+}
 
 client.once('ready', () => {
     console.log('Bee bot is online!')
@@ -35,6 +41,18 @@ client.on('guildMemberAdd', guildMember => {
     guildMember.roles.add(Welcomerole);
     guildMember.guild.channels.cache.get('818764514283225099').send(`Welcome to ChrisBoi's server <@${guildMember.user.id}> have a great time!`);
 });
+client.on('guildMemberAdd', member => {
+    if (member.guild.id !== stats.serverID) return;
+    client.channels.cache.get(stats.total).setName(`🧡 Total users: ${member.guild.memberCount}`);
+    client.channels.cache.get(stats.members).setName(`🧡 Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
+    client.channels.cache.get(stats.bots).setName(`🧡 Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
+})
+client.on('guildMemberRemove', member => {
+    if (member.guild.id !== stats.serverID) return;
+    client.channels.cache.get(stats.total).setName(`🧡 Total users: ${member.guild.memberCount}`);
+    client.channels.cache.get(stats.members).setName(`🧡 Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
+    client.channels.cache.get(stats.bots).setName(`🧡 Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
+})
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
