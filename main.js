@@ -10,7 +10,6 @@ const prefix = '-';
 
 const fs = require('fs');
 const mongoose = require('mongoose');
-const memberCounter = require('./counters/member-counter');
 const {
     execute
 } = require('./commands/status');
@@ -33,7 +32,6 @@ let stats = {
 client.once('ready', () => {
     console.log('Bee bot is online!')
     client.user.setActivity('ChrisBois server | -help', { type: 'WATCHING'}).catch(console.log);
-    memberCounter(client);
 });
 client.on('guildMemberAdd', guildMember => {
     let Welcomerole = guildMember.guild.roles.cache.find(role => role.name === '😀| Members');
