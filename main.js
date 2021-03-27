@@ -32,9 +32,10 @@ client.on('guildMemberAdd', guildMember => {
     let Welcomerole = guildMember.guild.roles.cache.find(role => role.name === '😀| Members');
 
     guildMember.roles.add(Welcomerole);
+    message.channel.send(`${guildMember.user.id}`)
     const embed = new Discord.MessageEmbed()
     .setTitle(`Welcome ${guildMember.user.username}`)
-    .setDescription(`Welcome to ChrisBoi's world ${guildMember.user.id}!\nMake sure to read the rules and we hope you enjoy your time here!`)
+    .setDescription(`Welcome to ChrisBoi's world ${guildMember.user.username}!\nMake sure to read the rules and we hope you enjoy your time here!`)
     .setTimestamp()
     .setFooter('ChrisBoi B)')
     .setColor('#00ccff')
