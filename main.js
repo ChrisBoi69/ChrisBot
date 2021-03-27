@@ -35,7 +35,7 @@ client.on('guildMemberAdd', guildMember => {
     const embed = new Discord.MessageEmbed()
     .setTitle(`Welcome ${guildMember.user.username}`)
     .setDescription(`Welcome to ChrisBoi's world ${guildMember.user.id}!\nMake sure to read the rules and we hope you enjoy your time here!`)
-    .setThumbnail(guildMember.avatarURL())
+    .setThumbnail(guildMember.displayAvatarURL())
     .setTimestamp()
     .setFooter('ChrisBoi B)')
     guildMember.guild.channels.cache.get('818764514283225099').send(embed);
