@@ -32,7 +32,13 @@ client.on('guildMemberAdd', guildMember => {
     let Welcomerole = guildMember.guild.roles.cache.find(role => role.name === '😀| Members');
 
     guildMember.roles.add(Welcomerole);
-    guildMember.guild.channels.cache.get('818764514283225099').send(`Welcome to ChrisBoi's server <@${guildMember.user.id}> have a great time!`);
+    const embed = new Discord.MessageEmbed()
+    .setTitle(`Welcome ${guildMember.user.username}`)
+    .setDescription(`Welcome to ChrisBoi's world ${guildMember.user.id}!\nMake sure to read the rules and we hope you enjoy your time here!`)
+    .setThumbnail(guildMember.avatarURL())
+    .setTimestamp()
+    .setFooter('ChrisBoi B)')
+    guildMember.guild.channels.cache.get('818764514283225099').send(embed);
 });
 
 client.on('message', message => {
