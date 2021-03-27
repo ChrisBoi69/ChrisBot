@@ -32,7 +32,6 @@ client.on('guildMemberAdd', guildMember => {
     let Welcomerole = guildMember.guild.roles.cache.find(role => role.name === '😀| Members');
 
     guildMember.roles.add(Welcomerole);
-    guildMember.guild.channels.cache.get('818764514283225099').send(`${guildMember.user.id}`)
     const embed = new Discord.MessageEmbed()
     .setTitle(`Welcome ${guildMember.user.username}`)
     .setDescription(`Welcome to ChrisBoi's world ${guildMember.user.username}!\nMake sure to read the rules and we hope you enjoy your time here!`)
